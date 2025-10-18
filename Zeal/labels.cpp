@@ -222,9 +222,9 @@ static int get_recast_time_gauge(int index, Zeal::GameUI::CXSTR *str) {
   // Empty gauge if recast timeout is < current game time or the fizzle timeout (GCD).
   int game_time = display->GameTimeMs;
   int spell_id = char_info->MemorizedSpell[index];
-  if (!Zeal::Game::Spells::IsValidSpellIndex(spell_id) || actor_info->CastingSpellId == spell_id ||
-      // actor_info->RecastTimeout[index] <= game_time || actor_info->RecastTimeout[index] <= actor_info->FizzleTimeout
-    ) {
+  if (!Zeal::Game::Spells::IsValidSpellIndex(spell_id) || actor_info->CastingSpellId == spell_id 
+    // || actor_info->RecastTimeout[index] <= game_time || actor_info->RecastTimeout[index] <= actor_info->FizzleTimeout
+  ) {
     if (str) str->Set("0");
     return 0;
   }
